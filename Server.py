@@ -1,6 +1,6 @@
 import socket  # Importa o socket
 # import _thread
-HOST = "172.16.12.255"  # Endereço IP do host
+HOST = "172.16.226.235"  # Endereço IP do host
 PORT = 65433  # Porta a ser escutada
 # # Função para o recebimento dos valores que os clientes mandam
 # def receive_values(data, addr):

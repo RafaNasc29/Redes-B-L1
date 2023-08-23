@@ -1,8 +1,8 @@
 import os
 import socket
 import time
-HOST = "127.0.0.1"  # The server's hostname or IP address
-PORT = 65433  # The port used by the server
+HOST = "172.16.12.213"  # The server's hostname or IP address
+PORT = 65432  # The port used by the server
 
 
 try:
@@ -10,12 +10,11 @@ try:
         result = s.connect((HOST, PORT))
         pid = os.fork()
         if pid > 0:
-            count = 0
             while True:
-                count += 1
-                s.sendto(f'{count}'.encode(), (HOST, PORT))
-                time.sleep(2)
-                if(count == 9): count = 0
+                sendText = ['I', 'g', 'o', 'r',' ','R','a','f','a','e','l',' ', 'G','a','b','r','i','e','l']
+                for letter in sendText:
+                    s.send(letter.encode())
+                    time.sleep(0.01)
             # os.waitpid(pid, 0)
             # pgid = os.getpgid(0)
             # os.killpg(pgid, signal.SIGTERM)
