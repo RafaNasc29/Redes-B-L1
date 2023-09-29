@@ -1,6 +1,6 @@
 import socket  # Importa o socket
 # import _thread
-HOST = "172.16.226.235"  # Endereço IP do host
+HOST = "192.168.1.101"  # Endereço IP do host
 PORT = 65433  # Porta a ser escutada
 # # Função para o recebimento dos valores que os clientes mandam
 # def receive_values(data, addr):
@@ -17,7 +17,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.bind((HOST, PORT))
     while True:
         addressPair = s.recvfrom(1024)
-        print(f"Conexao estabelecida com {addressPair[1]}")
         data = addressPair[0]
         addr = addressPair[1]
         text = bytearray(len(data))
